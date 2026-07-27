@@ -61,18 +61,18 @@ def submit_quiz(quiz_id, answers):
     percentage = round((score/total_questions) * 100, 2)
 
     status = "Pass" if percentage >= 40  else "Fail"
-    
+
     return {
         "score": score,
 
-        "total": total_questions,
+        "total_questions": total_questions,
 
         "correct_answers": score,
 
         "wrong_answers": wrong_answers,
 
-        "Percentage": percentage,
+        "percentage": percentage,
         
-        "Status": status
+        "status": status
 
     }
