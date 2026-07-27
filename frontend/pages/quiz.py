@@ -75,20 +75,8 @@ if st.button("Submit Quiz"):
 
     # st.write(result)
 
-    st.success("Quiz Submitted Successfully!")
+    # Save result in session
+    st.session_state["result"] = result
 
-    st.write(f"### Score : {result['score']} / {result['total_questions']}")
-
-    st.write(f"### Correct Answers : {result['correct_answers']}")
-
-    st.write(f"### Wrong Answers : {result['wrong_answers']}")
-
-    st.write(f"### Percentage : {result['percentage']}%")
-
-    if result["status"] == "Pass":
-
-        st.success("🎉 PASS")
-
-    else:
-
-        st.error("❌ FAIL")
+    # Move to Result page
+    st.switch_page("pages/result.py")
